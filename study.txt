@@ -1,0 +1,113 @@
+// const와 let, var의 차이
+// console.log() == printf
+// undefined 와 null의 차이
+// array에 데이터 타입이 다를 수 있음, []사용
+// array. 을 하면 여러기능들이 기본적으로 존재,
+// 존재하지 않는 인덱스에 접근하면 어떻게 될까? -> undefined 출력
+// const name={
+// name: sdfghjk;
+//
+// }
+// 이런식으러 구조체 선언도 가능, . 으로 접근 혹은 name["name"] 이런식
+// 근데 구조체가 const라고 안에 있는 요소들도  const인 것은 아니다. 그 구조가 const인것,
+// 근데 name.n ?
+// 함수선언은 function name(){}로 함, 매개변수를 받을 떄 형을 안정해주고 이름으로만 설정
+// 구조체 안에 함수를 선언할 때에는 name: function(){} 형식
+// return을 하기만 하면 함수에서 리턴값의 형식을 정해주지않아도 작동
+// promppt, parseInt, Nan반환
+// isNAN()로 NaN인지 판단
+// js에서는 같다가 === 3개! 다르다는 !==
+// 조건문은 if, else if, else로 나뉨
+// console창에서 document.title = "sdfghjk" 해도 바뀜 와우~ 근데 그럼 안되지않나
+// js는 이미 html과 연결되어 있다는 뜻~~
+//document.body로 body부분만 가져올 수도 있음
+// document에서는 여러가지 옵션이 더 있음
+// document.getElementById()
+// 보통은 console.dir(cghjk)해서 쓸 수 있는것을 알아 낼 수 있음
+// css처럼 가져오는 방식이 있는데, 그건 바로
+// const title = document.querySelector(".hello(class) h1") 이렇게!
+// 이걸 사용했을 떄 만약 요소가 여러가지라면 맨 첫번째것만 나온다.
+// 다가져오려면 QuerySelectorAll
+// querySelector("#hello"), getElementById("hello")은 get~ID가 id를 가져올것이라고 정해둔데서 차이가 있다.
+// const title = document.getElementById("title");
+// console.dir(title.textContent);
+
+const h1 = document.querySelector("div.hello:first-child h1");
+
+// function handleTitleClick() {
+//   const clickClass = "active";
+//   이렇게 하면 변수명을 잘 못적는 오류를 알림받을 수 있다.
+// // className과 classList의 다른점. 말그대로 전자는 싹 바꿔버리고 후자는 list취급
+//   if (h1.classList.contains(clickClass)) {
+// h1.classList.remove(clickClass);
+//   } else {
+// h1.classList.add(clickClass);
+//   }
+// }
+
+// function handleMouseEnter() {
+//   h1.innerText = "Mouse is here!";
+// }
+//
+// function handleMouseLeave() {
+//   h1.innerText = "Mouse is gone!";
+// }
+//
+// function handleWindowResize() {
+//   document.body.style.backgroundColor = "tomato";
+// }
+//
+// function handleWindowCopy() {
+//   alert("copier!");
+// }
+//
+// function handleWindowOffline() {
+//   alert("SOS no WIFI");
+// }
+//
+// function handleWindowOnline() {
+//   alert("All good");
+// }
+
+function handleTitleClick() {
+  h1.classList.toggle("active");
+  //   toggle은 리스트에 있으면 뺴주고 없으면 추가해주는 기능을 지닌다.
+  //   핸드퐁 전원 버튼과 같은 것
+  //   보통은 2번 이상 사용 될떄 변수를 사용
+}
+h1.addEventListener("click", handleTitleClick);
+// h1.addEventListener("mouseenter", handleMouseEnter);
+// h1.addEventListener("mouseleave", handleMouseLeave);
+// === h1.onclick = handleTitleClick;
+// event를 찾는 가장 좋은 방법은 구글에 찾고 싶은 element의 이름, 예를 들어 h1 element를 적고 html element mdn -> h1 html element mdn
+// 자바 스크립트 관련으 찾고싶으므로 Web APIs를 찾음
+// 또는 console.dir(h1)로  on이 붙은 걸 찾는다.
+
+// window.addEventListener("resize", handleWindowResize);
+// window.addEventListener("copy", handleWindowCopy);
+// window.addEventListener("offline", handleWindowOffline);
+// window.addEventListener("online", handleWindowOnline);
+
+-------------------------------------
+css
+
+body {
+  background-color: beige;
+}
+
+* {
+  font-family: cursive;
+}
+
+h1 {
+  color: cornflowerblue;
+}
+
+.active {
+  color: tomato;
+}
+
+.sexy-font {
+  font-family: "Franklin Gothic Medium", 
+"Arial Narrow", Arial, sans-serif;
+}
